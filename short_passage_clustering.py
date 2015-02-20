@@ -26,7 +26,7 @@ from operator import itemgetter
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
 
-##### if clustering on tagged data, the following should be uncommented
+
 import nltk.data
 from nltk.tag import stanford
 # java_path = "/usr/bin/java"
@@ -154,7 +154,7 @@ class makeCentroidClusters:
       
         # number_of_sentences = 0
 
-        list_of_sentences = self.tokenize(text)  ### this should be in the class initialization I think.
+        list_of_sentences = self.tokenize(text)  ### this perhaps should be in the class init.
 
 
         for sentence in list_of_sentences:
@@ -319,7 +319,7 @@ class makeCentroidClusters:
 
         java_path = "/usr/bin/java"
         os.environ['JAVAHOME'] = java_path
-        stanford_path = ('/Applications/stanford-postagger-full-2014-08-27/')
+        stanford_path = ('/Applications/stanford-postagger-full-2014-08-27/')  ### check for correct path here.
 
         tag_english = stanford.POSTagger(stanford_path + 'models/english-bidirectional-distsim.tagger', stanford_path + 'stanford-postagger.jar', encoding = 'utf-8')
 
@@ -403,7 +403,7 @@ class makeCentroidClusters:
             self.getResults()
 
     
-    def getResults(self):     #### this is currently being modified to return only stanford pipeline sentences, in future in would make sense
+    def getResults(self):     
         
 
         clusters = self.clusters
